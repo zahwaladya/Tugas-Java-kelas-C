@@ -1,0 +1,58 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package java.tugas.c.tugas.satu.c;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+/**
+ *
+ * @author Zahwa Ladya Maharani
+ */
+@Controller
+public class TableController {
+    
+    @RequestMapping("/datakrs")
+    //@ResponBody
+    public String getTable (Model DataMahasiswa) {
+        String result = "Table Mahasiswa ";
+        DataMahasiswa.addAttribute("DataMahasiswa", result);
+        
+       ArrayList<List<String>> data = new ArrayList<>();        
+        
+        data.add(0,Arrays.asList("ID","Nomor KTP","Nama","Alamat"));
+        data.add(1,Arrays.asList("1001","7303124362155401","Andre Ihsan","Lombok"));
+        data.add(2,Arrays.asList("1002","6303154362134002","Alya Afifah","Bandung"));
+        data.add(3,Arrays.asList("1003","6505124362165003","Galih Taufik","Indramayu"));
+        data.add(4,Arrays.asList("1004","7113125336513401","Annisa Rifa","Bansung"));
+        data.add(5,Arrays.asList("1005","5343124362134342","Ririn Puspita","Makassar"));
+        data.add(6,Arrays.asList("1006","7124123368168001","Ihsan Akmal","Papua"));
+        data.add(7,Arrays.asList("1007","5203124562134031","Nurul Miftah ","Papua Barat"));
+        data.add(8,Arrays.asList("1008","6677824352134221","Zaima Tunnisa","Bantaeng"));
+        data.add(9,Arrays.asList("1009","5698723446098005","Indah Puspita","Cirebon"));
+        data.add(10,Arrays.asList("1010","6333784387634001","Afikah Naila","Jakarta"));
+        data.add(11,Arrays.asList("1011","7343165762134221","Kurnianti","Bali"));
+        data.add(12,Arrays.asList("1012","5653124389034543","Wafiq Purnama","Solo"));
+        data.add(13,Arrays.asList("1013","2311243678948891","Ifa Mudifah","Aceh"));
+        data.add(14,Arrays.asList("1014","7673123621389074","Aliyah Kirana","Medan"));
+        data.add(15,Arrays.asList("1015","6603124367906501","Ihsan Wirama","Palu"));
+        data.add(16,Arrays.asList("1016","5812436213488904","Diana Miranda Ila","Jambi"));
+        data.add(17,Arrays.asList("1017","7867572910452376","Yulianti","Mamuju"));
+        data.add(18,Arrays.asList("1018","6673178362190011","Qanita Amalia","Magelang"));
+        data.add(19,Arrays.asList("1019","5563126699021341","Fina Iranda Lia","Banten"));
+        data.add(20,Arrays.asList("1020","7303124362134001","Andre Ihsan","Lombok"));
+        
+        DataMahasiswa.addAttribute("Data", data);
+               
+        return "tableviewer";
+        
+    }
+    
+}
